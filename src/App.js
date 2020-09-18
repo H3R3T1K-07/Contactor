@@ -33,7 +33,7 @@ class Contact extends Component {
           message: this.state.message
       }
       
-      axios.post('https://contactor-api.vercel.app/', data)
+      axios.post('https://contactor-api.vercel.app/api/v1', data)
       .then( res => {
           this.setState({ sent: true }, this.resetForm())
       })
