@@ -33,7 +33,7 @@ class Contact extends Component {
           message: this.state.message
       }
       
-      axios.post('API_URI', data)
+      axios.post('https://contactor-api.vercel.app/', data)
       .then( res => {
           this.setState({ sent: true }, this.resetForm())
       })
@@ -65,7 +65,7 @@ class Contact extends Component {
                   value={this.state.email}
                 />
                 <br/>
-                <label htmflFor="message"> Message </label>
+                <label htmflFor="message"> Enter ßMessage </label>
                 <textarea 
                   onChange={e => this.setState({message: e.target.value})}
                   name="message"
