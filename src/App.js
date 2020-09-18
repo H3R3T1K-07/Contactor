@@ -44,7 +44,44 @@ class Contact extends Component {
 
     render() {
         return(
-           <></>
+           <>
+              <form onSubmit={(e) => this.formSubmit(e)}>
+                <label htmflFor="name"> Name </label>
+                <input 
+                  onChange={e => this.setState({name: e.target.value})}
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  value={this.state.name}
+                /> 
+                <br />
+                <label htmflFor="email"> Email </label>
+                <input 
+                  onChange={e => this.setState({email: e.target.value})}
+                  name="name"
+                  type="email"
+                  placeholder="Your email"
+                  required
+                  value={this.state.email}
+                />
+                <br/>
+                <label htmflFor="message"> Message </label>
+                <textarea 
+                  onChange={e => this.setState({message: e.target.value})}
+                  name="message"
+                  type="text"
+                  placeholder="Please write your message here"
+                  required
+                  value={this.state.message}
+                />
+                <br/>
+                <div>
+                  <button type="submit">{this.state.buttonText}</button>
+                </div> 
+                
+              </form>
+
+           </>
         );
     }
 }
